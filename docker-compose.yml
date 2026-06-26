@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: kanbunny_postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: kanbunny_user
+      POSTGRES_PASSWORD: kanbunny_password
+      POSTGRES_DB: kanbunny_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
